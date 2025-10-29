@@ -47,36 +47,10 @@ public class Elevator extends ElevatorSubject implements Runnable{
         this.state = state;
     }
 
-    public synchronized void moveUp(int nextFloor) {
-
-    }
-
-    public synchronized void moveDown(int nextFloor) {
-
-    }
-
     public synchronized void addRequest(ElevatorRequest request) {
 
         log.info("Elevator {} processing {}", this.name, request);
         this.state.addRequest(this, request);
-    }
-
-    public void openDoor(int floor) {
-        if(currentFloor.get() == floor && Door.CLOSED.equals(doorState)) {
-            log.info("Door opened on floor {}", floor);
-            this.doorState = Door.OPEN;
-            return;
-        }
-        throw new RuntimeException("Door can't be opened on this floor");
-    }
-
-    public void closeDoor() {
-        if(Door.OPEN.equals(doorState)) {
-            log.info("Door closed");
-            this.doorState = Door.CLOSED;
-            return;
-        }
-        throw new RuntimeException("Door can't be closed on this floor");
     }
 
     public void setCurrentFloor(int floor) {
@@ -100,8 +74,6 @@ public class Elevator extends ElevatorSubject implements Runnable{
     public TreeSet<Integer> getUpRequests() { return upRequests; }
 
     public TreeSet<Integer> getDownRequests() { return downRequests; }
-
-    public boolean isRunning() { return isRunning; }
 
     public void stopElevator() { this.isRunning= false;}
 

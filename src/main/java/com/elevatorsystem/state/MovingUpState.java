@@ -4,8 +4,14 @@ import com.elevatorsystem.entities.Elevator;
 import com.elevatorsystem.enums.RequestSource;
 import com.elevatorsystem.enums.Trajectory;
 import com.elevatorsystem.models.ElevatorRequest;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+@Slf4j
 public class MovingUpState implements ElevatorState{
+    private static final Logger log = LoggerFactory.getLogger(MovingUpState.class);
+
     @Override
     public void move(Elevator elevator) {
         if(elevator.getUpRequests().isEmpty()) {
@@ -17,7 +23,7 @@ public class MovingUpState implements ElevatorState{
         elevator.setCurrentFloor(elevator.getCurrentFloor() + 1);
 
         if(elevator.getCurrentFloor() == nextFloor) {
-            System.out.println("Elevator "+ elevator.getName()+ " is at floor "+elevator.getCurrentFloor());
+            log.info("Elevator {} is at floor {}", elevator.getName(), elevator.getCurrentFloor());
             elevator.getUpRequests().pollFirst();
         }
 

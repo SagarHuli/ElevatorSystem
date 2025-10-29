@@ -26,9 +26,9 @@ public class ElevatorDemo {
         Thread.sleep(300);
 
         // 4. Internal Request: User in E2 presses 1.
-        elevatorSystem.selectFloor("E2", 1);
+        elevatorSystem.selectFloor("E2", 2);
 
-        Thread.sleep(1000);
+        Thread.sleep(20000);
 
         // Shutdown the system
         elevatorSystem.shutDown();
