@@ -1,0 +1,11 @@
+[main] INFO com.elevatorsystem.entities.Display - Elevator E1 | Current floor 1 | Direction IDLE
+[main] INFO com.elevatorsystem.entities.Display - Elevator E2 | Current floor 1 | Direction IDLE
+[main] INFO com.elevatorsystem.ElevatorSystem - External request :: User at floor 5 wants to go UP
+[main] INFO com.elevatorsystem.entities.Elevator - Elevator E1 processing EXTERNAL Request to Floor 5going UP
+[main] INFO com.elevatorsystem.ElevatorSystem - User in elevator E1 wants to go to 10
+[main] INFO com.elevatorsystem.entities.Elevator - Elevator E1 processing INTERNAL Request to Floor 10
+[main] INFO com.elevatorsystem.ElevatorSystem - External request :: User at floor 3 wants to go DOWN
+[main] INFO com.elevatorsystem.entities.Elevator - Elevator E1 processing EXTERNAL Request to Floor 3going DOWN
+[main] INFO com.elevatorsystem.ElevatorSystem - User in elevator E2 wants to go to 1
+[main] INFO com.elevatorsystem.entities.Elevator - Elevator E2 processing INTERNAL Request to Floor 1
+[main] INFO com.elevatorsystem.ElevatorSystem - Shutting down elevator system

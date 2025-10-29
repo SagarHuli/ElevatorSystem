@@ -9,5 +9,5 @@ import java.util.Optional;
 
 public interface ElevatorSelectionStrategy {
 
-    public Optional<Elevator> selectElevator(List<Elevator> elevators, ElevatorRequest request);
+    Optional<Elevator> selectElevator(List<Elevator> elevators, ElevatorRequest request);
 }
